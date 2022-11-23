@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List Mobil</title>
+    </head>
+    <body>
+        <ol>
+            <li>
+                <a href="{% url 'mobil:tambah' %}">Tambah</a>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nama Mobil</th>
+                <th>Harga</th>
+            </tr>
+            {% for mobil in object_list %}
+            <tr>
+                <td>{{ mobil.id }}</td>
+                <td>{{ mobil.nama }}</td>
+                <td>{{ mobil.harga }}</td>
+            </tr>
+        </table>
+    </body>
+</html>
